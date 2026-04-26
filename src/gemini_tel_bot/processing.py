@@ -881,10 +881,14 @@ async def _handle_ai_interaction(
     processing_completed_successfully = False
     waiting_animation: telebot_types.Message | None = None
     caption_updated_for_tool: bool = False
-        try:
-            waiting_animation = None
-        except Exception as e:
-            pass
+
+    try:
+        waiting_animation = await bot_instance.send_animation(
+            chat_id,
+            animation=LOADING_ANIMATION_FILE_ID,
+            caption="Thinking... please wait. ✨",
+        )
+
         adk_content_for_user_turn = genai_types.Content(
             role="user", parts=user_input_parts
         )
