@@ -883,11 +883,12 @@ async def _handle_ai_interaction(
     caption_updated_for_tool: bool = False
 
     try:
-        waiting_animation = await bot_instance.send_animation(
-            chat_id,
-            animation=LOADING_ANIMATION_FILE_ID,
-            caption="Thinking... please wait. ✨",
-        )
+            # waiting_animation = await bot_instance.send_animation(
+            #     chat_id,
+            #     animation=LOADING_ANIMATION_FILE_ID,
+            #     caption="Thinking... please wait. ✨",
+            # )
+            waiting_animation = None
 
         adk_content_for_user_turn = genai_types.Content(
             role="user", parts=user_input_parts
