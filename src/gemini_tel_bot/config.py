@@ -30,7 +30,7 @@ DEFAULT_MODEL_NAME: str = os.getenv("DEFAULT_MODEL_NAME", "gemini-1.5-flash-late
 VOICE_MODEL: str = "gemini-2.5-flash-preview-tts"
 IMAGE_GENERATION_MODEL: str = "models/imagen-3.0-generate-002"
 
-MAX_HISTORY_LENGTH_TURNS: int = int(os.getenv("MAX_HISTORY_LENGTH_TURNS", "20"))
+MAX_HISTORY_LENGTH_TURNS: int = int(os.getenv("MAX_HISTORY_LENGTH_TURNS", "1000"))
 
 # --- Usage Limits (if applicable) ---
 # DEFAULT_KEY_MESSAGE_LIMIT: This limit applies if the bot is operating
